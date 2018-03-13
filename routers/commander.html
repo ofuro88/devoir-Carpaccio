@@ -1,0 +1,39 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<form name="form" action="./commander" method="post">
+    <label for="client">Nombre :</label>
+    <input type="text" name="client" id="client" value="Jean" required>
+    <br>
+    <br>
+
+    <select name="produit" >
+        <option value="Céleri">Céleri</option>
+        <option value="Oignon">Oignon</option>
+        <option value="Pomme de terre">Pomme de terre</option>
+        <option value="Orange">Orange</option>
+    </select>
+    <br>
+    <br>
+
+    <label for="quantite">Quantité :</label>
+    <input type="number" name="quantite" id="quantite" value=1 min=0>
+    <br>
+    <br>
+
+    <label for="date">Date :</label>
+    <input type="date" name="date" id="date" value="2018-03-13" min="2018-01-01" max="2018-03-31">
+    <br>
+    <br>
+
+    <select name="saison" >
+        <option value="Hiver">Hiver</option>
+        <option value="Printemps">Printemps</option>
+        <option value="Eté">Eté</option>
+        <option value="Automne">Automne</option>
+    </select>
+    <br>
+    <br>
+
+    <button type="submit">Commander</button>
+</form>
