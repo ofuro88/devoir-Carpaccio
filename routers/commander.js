@@ -36,6 +36,11 @@ function validateCommandeData(req, res, next) {
     // console.log(req.body)
     if(req.body){
         req.commandeData = req.body
+        req.client =req.body.data.client
+        req.produuit = req.body.data.produit
+        req.quantite = req.body.data.quantite
+        req.date = req.body.data.date
+        req.saison = req.body.data.saison
         next()
     }
     else {
