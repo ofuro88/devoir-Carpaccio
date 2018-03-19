@@ -7,12 +7,7 @@
     <br>
     <br>
 
-    <select name="produit" >
-        <option value="Céleri">Céleri</option>
-        <option value="Oignon">Oignon</option>
-        <option value="Pomme de terre">Pomme de terre</option>
-        <option value="Orange">Orange</option>
-    </select>
+    <select name="produit" id="produit"></select>
     <br>
     <br>
 
@@ -26,7 +21,8 @@
     <br>
     <br>
 
-    <select name="saison" >
+    <select name="saison" id="saison" onchange="tools">
+        <option value=""></option>
         <option value="Hiver">Hiver</option>
         <option value="Printemps">Printemps</option>
         <option value="Eté">Eté</option>
@@ -37,3 +33,5 @@
 
     <button type="submit">Commander</button>
 </form>
+
+<script src="../tools/updateProd.js"></script>

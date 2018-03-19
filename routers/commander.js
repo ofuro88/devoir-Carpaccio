@@ -1,5 +1,5 @@
 const express = require('express')
-const commandesRouter = express.Router()
+const commanderRouter = express.Router()
 const bodyParser = require('body-parser')
 const path = require('path')
 const tools = require('../tools/toolsCommandes')
@@ -7,8 +7,8 @@ const tools = require('../tools/toolsCommandes')
 var produits = tools.GetProduits()
 var commandes = tools.GetCommandes()
 
-commandesRouter.use(bodyParser.urlencoded({extended: true}))
-commandesRouter.use(bodyParser.json())
+commanderRouter.use(bodyParser.urlencoded({extended: true}))
+commanderRouter.use(bodyParser.json())
 
 // middlewares
 // données trouvées
@@ -36,11 +36,6 @@ function validateCommandeData(req, res, next) {
     // console.log(req.body)
     if(req.body){
         req.commandeData = req.body
-        req.client =req.body.data.client
-        req.produuit = req.body.data.produit
-        req.quantite = req.body.data.quantite
-        req.date = req.body.data.date
-        req.saison = req.body.data.saison
         next()
     }
     else {
@@ -49,39 +44,38 @@ function validateCommandeData(req, res, next) {
 }
 
 // lectures
-commandesRouter.get('/', (req, res) => res.sendFile(path.join(__dirname , 'commander.html')))
+commanderRouter.get('/', (req, res) => res.sendFile(path.join(__dirname , 'commander.html')))
 // commandesRouter.get('/', (req, res) => res.json(produits))
 // commandesRouter.get('/:commandeId', findProduitAndPutInRequest, interruptIfNotFound,
 //     (req, res) => res.json(req.person)
 // )
 
 // création
-commandesRouter.post('/', validateCommandeData, (req, res) => {
-    console.log(req.body)
-    const commande = Object.assign({ id: tools.GetLastCommandeId()+1 }, req.commandeData)
+commanderRouter.post('/', validateCommandeData, (req, res) => {
+    const commande = Object.assign({ id: tools.GetNextCommandeId() }, req.commandeData)
     tools.AddCommande(commande)
     console.log(commandes)
-    res.status(201).json(commande)
+    res.status(204).end
 })
 
 // modification
-commandesRouter.put('/:personId', validateCommandeData, findProduitAndPutInRequest, interruptIfNotFound, (req, res) => {
+commanderRouter.put('/:per()sonId', validateCommandeData, findProduitAndPutInRequest, interruptIfNotFound, (req, res) => {
     produits[req.personIndex] = Object.assign(req.person, req.personData)
     res.status(200).json(produits[req.personIndex])
 })
 
 // modification différencielle (modifie seulement les champs voulus, n'écrase pas tous les champs)
-commandesRouter.patch('/:personId', findProduitAndPutInRequest, interruptIfNotFound, (req, res) => {
+commanderRouter.patch('/:personId', findProduitAndPutInRequest, interruptIfNotFound, (req, res) => {
     Object.assign(produits[req.personIndex], req.personData);
     res.status(200).json(person)
 })
 
 // suppression
-commandesRouter.delete('/:personId', findProduitAndPutInRequest, interruptIfNotFound, (req, res) => {
+commanderRouter.delete('/:personId', findProduitAndPutInRequest, interruptIfNotFound, (req, res) => {
     produits.splice(req.personIndex, 1)
     res.status(204).end()
 })
 
 
 // export
-module.exports = commandesRouter
+module.exports = commanderRouter

@@ -1,5 +1,5 @@
 var { produits } = require('../data/produitsData')
-var { commandes, lastCommandeId } = require('../data/commandesData')
+var { commandes, nextCommandeId } = require('../data/commandesData')
 
  function GetProduits(){
     return produits
@@ -9,15 +9,15 @@ function GetCommandes(){
     return commandes
 }
 
-function GetLastCommandeId() {
-    return lastCommandeId
+function GetNextCommandeId() {
+    return nextCommandeId
 }
 
 function AddCommande(pCommande){
-    lastCommandeId++
+    nextCommandeId++
     commandes.push(pCommande)
 }
 
 module.exports = {
-    GetProduits, GetCommandes, GetLastCommandeId, AddCommande
+    GetProduits, GetCommandes, GetNextCommandeId, AddCommande
 }

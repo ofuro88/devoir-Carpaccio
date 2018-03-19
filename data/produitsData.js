@@ -1,9 +1,9 @@
 module.exports = {
     produits : [
-        {id :0, nom : "Céleri",Saison : "hiver", Prix : 5.77},
-        {id :1, nom : "Oignon",Saison : "hiver", Prix : 3.32},
-        {id :2, nom : "Pomme de terre",Saison : "hiver", Prix : 3.20},
-        {id :3, nom : "Orange",Saison : "hiver", Prix : 3.17},
+        {id :0, nom : "Céleri",Saison : "Hiver", Prix : 5.77},
+        {id :1, nom : "Oignon",Saison : "Hiver", Prix : 3.32},
+        {id :2, nom : "Pomme de terre",Saison : "Hiver", Prix : 3.20},
+        {id :3, nom : "Orange",Saison : "Hiver", Prix : 3.17},
         {id :4, nom : "Kiwi",Saison : "Printemps", Prix : 2.13},
         {id :5, nom : "Carotte",Saison : "Printemps", Prix : 2.12},
         {id :6, nom : "Asperge",Saison : "Printemps", Prix : 12.55},
