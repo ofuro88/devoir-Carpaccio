@@ -55,7 +55,7 @@ commanderRouter.post('/', validateCommandeData, (req, res) => {
     const commande = Object.assign({ id: tools.GetNextCommandeId() }, req.commandeData)
     tools.AddCommande(commande)
     console.log(commandes)
-    res.status(204).end
+    res.status(204).end()
 })
 
 // modification

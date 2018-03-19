@@ -1,8 +1,8 @@
 const tools = require('../tools/toolsCommandes')
-let produits = tools.GetProduits()
+var produits = tools.GetProduits()
 
-let doc = document.getElementById("produit");
-let option = document.createElement("option");
+var doc = document.getElementById("produit");
+var option = document.createElement("option");
 
 for (i = 0; i < produits.size; i++) {
     //Booleen disant si il est selectionné.
