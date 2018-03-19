@@ -33,7 +33,13 @@
 
         <button type="submit">Commander</button>
     </form>
+
+    <form name="accueil" action="../" method="get">
+        <button type="submit">Accueil</button>
+    </form>
+
 </body>
+
 <script type="text/javascript">
     function updateProd() {
         // tableau des produits
@@ -72,29 +78,11 @@
         for (i = 0; i < produits.length; i++) {
 
             if (produits[i].Saison === saison[indexSaison].value) {
-                console.log(i)
-                console.log(produits[i].nom)
-                console.log(listeProd)
 
                 var option = document.createElement("option");
                 option.text = produits[i].nom;
                 listeProd.appendChild(option);
             }
-//
-//            if (produits[i].Saison === ("Automne")) {
-//                option.text = produits[i].nom;
-//                doc.add(option);
-//            }
-//
-//            if (produits[i].Saison.equals("Ete")) {
-//                option.text = produits[i].nom;
-//                doc.add(option);
-//            }
-//
-//            if (produits[i].Saison.equals("Printemps")) {
-//                option.text = produits[i].nom;
-//                doc.add(option);
-//            }
         }
     }
 </script>

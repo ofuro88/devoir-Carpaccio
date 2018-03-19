@@ -1,6 +1,63 @@
 <!doctype html>
 <meta charset="utf-8">
 
-<h1>Listes des commandes</h1>
+<body>
 
-<div id="tableCommandes"></div>
+    <h1>Listes des commandes</h1>
+
+    <table border="1" id="kids">
+        <tr>
+            <th>Id</th>
+            <th>Client</th>
+            <th>Produit</th>
+            <th>Quantité</th>
+            <th>Date</th>
+            <th>Saison</th>
+        </tr>
+        <tbody  >
+        <tr >
+            <td >
+                <input type="text" name="Designation">
+            </td>
+            <td>
+                <input type="text" name="Serie">
+            </td>
+            <td>
+                <input type="text" name="Quantite">
+            </td>
+            <td>
+                <input type="button" id="add_kid()" onClick="addKid()" value="+" />
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form action="../" method="get">
+        <button type="submit">Accueil</button>
+    </form>
+
+</body>
+
+<script type="text/javascript">
+
+    var i = 0;
+
+    function addKid()
+    {
+        if (i < 5)
+        {
+            var newRow = document.createElement('tr');
+            newRow.innerHTML = '<td> <input type="text" name="Designation_'+i+'" ><td> <input type="text" name="Serie_'+i+'" ></td><td><input type="text" name="Quantite_'+i+'" ></td><td><input type="button" id="add_kid()" onClick="addKid()" value="+" /><input type="button" value="-" onclick="removeKid(this.parentNode)"></td>';
+
+            document.getElementById('kids').appendChild(newRow);
+            i++;
+        }
+    }
+
+    function removeKid(element)
+    {
+        document.getElementById('kids').removeChild(element.parentNode);
+        i--;
+    }
+
+</script>

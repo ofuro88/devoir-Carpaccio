@@ -45,10 +45,7 @@ function validateCommandeData(req, res, next) {
 
 // lectures
 commanderRouter.get('/', (req, res) => res.sendFile(path.join(__dirname , 'commander.html')))
-// commandesRouter.get('/', (req, res) => res.json(produits))
-// commandesRouter.get('/:commandeId', findProduitAndPutInRequest, interruptIfNotFound,
-//     (req, res) => res.json(req.person)
-// )
+commanderRouter.get('../', (req,res) => res.redirect('localhost:3000/'))
 
 // création
 commanderRouter.post('/', validateCommandeData, (req, res) => {

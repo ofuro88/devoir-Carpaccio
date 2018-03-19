@@ -14,7 +14,10 @@ commandesRouter.use(bodyParser.json())
 
 
 // lectures
-commanderRouter.get('/', (req, res) => res.sendFile(path.join(__dirname , 'histoCommandes.html')))
+commandesRouter.get('/', (req, res) => res.sendFile(path.join(__dirname , 'histoCommandes.html')))
+    // retour à l'accueil
+commandesRouter.get('../', (req,res) => res.redirect('localhost:3000/'))
+
 
 // création
 
@@ -26,4 +29,4 @@ commanderRouter.get('/', (req, res) => res.sendFile(path.join(__dirname , 'histo
 
 
 // export
-module.exports = groupsRouter
+module.exports = commandesRouter

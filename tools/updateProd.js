@@ -1,29 +1,23 @@
-const tools = require('../tools/toolsCommandes')
+const tools = require('./toolsCommandes')
+
+// récupère le tableau des produits
 var produits = tools.GetProduits()
 
-var doc = document.getElementById("produit");
-var option = document.createElement("option");
+// récupère les combo et l'index de la saison sélectionnée
+var listeProd = document.getElementById("produit");
+var saison = document.getElementById("saison");
+var indexSaison = saison.selectedIndex;
 
-for (i = 0; i < produits.size; i++) {
-    //Booleen disant si il est selectionné.
+// remise du combo à zéro avant de re remplir
+listeProd.innerHTML = '';
 
-    if (produits[i].Saison.equals("Hiver")) {
+// boucle pour générer la combo box des produits
+for (i = 0; i < produits.length; i++) {
+
+    if (produits[i].Saison === saison[indexSaison].value) {
+
+        var option = document.createElement("option");
         option.text = produits[i].nom;
-        doc.add(option);
-    }
-
-    if (produits[i].Saison.equals("Automne")) {
-        option.text = produits[i].nom;
-        doc.add(option);
-    }
-
-    if (produits[i].Saison.equals("Ete")) {
-        option.text = produits[i].nom;
-        doc.add(option);
-    }
-
-    if (produits[i].Saison.equals("Printemps")) {
-        option.text = produits[i].nom;
-        doc.add(option);
+        listeProd.appendChild(option);
     }
 }
