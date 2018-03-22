@@ -8,7 +8,7 @@
         <br>
 
         <label for="saison">Saison :</label>
-        <select name="saison" id="saison" onchange="updateProd()">
+        <select name="saison" id="saison" onchange="updateProd()" required>
             <option value=""></option>
             <option value="Hiver">Hiver</option>
             <option value="Printemps">Printemps</option>
@@ -19,17 +19,17 @@
         <br>
 
         <label for="produit">Produit :</label>
-        <select name="produit" id="produit"></select>
+        <select name="produit" id="produit" required></select>
         <br>
         <br>
 
         <label for="quantite">Quantité :</label>
-        <input type="number" name="quantite" id="quantite" value=1 min=0>
+        <input type="number" name="quantite" id="quantite" value=1 min=0 required>
         <br>
         <br>
 
         <label for="date">Date :</label>
-        <input type="date" name="date" id="date" value="2018-03-13" min="2018-01-01" max="2018-03-31">
+        <input type="date" name="date" id="date" value="2018-03-13" min="2018-01-01" max="2018-03-31" required>
         <br>
         <br>
 
