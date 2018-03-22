@@ -7,6 +7,18 @@
         <br>
         <br>
 
+        <label for="saison">Saison :</label>
+        <select name="saison" id="saison" onchange="updateProd()">
+            <option value=""></option>
+            <option value="Hiver">Hiver</option>
+            <option value="Printemps">Printemps</option>
+            <option value="Ete">Eté</option>
+            <option value="Automne">Automne</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="produit">Produit :</label>
         <select name="produit" id="produit"></select>
         <br>
         <br>
@@ -18,16 +30,6 @@
 
         <label for="date">Date :</label>
         <input type="date" name="date" id="date" value="2018-03-13" min="2018-01-01" max="2018-03-31">
-        <br>
-        <br>
-
-        <select name="saison" id="saison" onchange="updateProd()">
-            <option value=""></option>
-            <option value="Hiver">Hiver</option>
-            <option value="Printemps">Printemps</option>
-            <option value="Ete">Eté</option>
-            <option value="Automne">Automne</option>
-        </select>
         <br>
         <br>
 

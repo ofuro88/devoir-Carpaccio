@@ -8,7 +8,7 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname , 'index.html')))
 
 // rédirige vers les pages de commander et commandes
 app.use('/commander', require('./routers/commander'))
-app.use('/commandes', require('./routers/histoCommandes'))
+app.use('/valider', require('./routers/valider'))
 
 // lancement du serveur web
 app.listen(3000, () => console.log('On http://localhost:3000/'))

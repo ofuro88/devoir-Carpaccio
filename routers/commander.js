@@ -34,12 +34,12 @@ function interruptIfNotFound(req, res, next) {
 // vérifications des données
 function validateCommandeData(req, res, next) {
     // console.log(req.body)
-    if(req.body){
+    if(req.body && req.body.client && req.body.saison && req.body.produit && req.body.quantite && req.body.date){
         req.commandeData = req.body
         next()
     }
     else {
-        res.status(400).json({ error: 'Invalid person data' })
+        res.status(400).json({ error: 'Invalid purchase data' })
     }
 }
 
@@ -52,27 +52,8 @@ commanderRouter.post('/', validateCommandeData, (req, res) => {
     const commande = Object.assign({ id: tools.GetNextCommandeId() }, req.commandeData)
     tools.AddCommande(commande)
     console.log(commandes)
-    res.status(204).end()
+    res.sendFile(path.join(__dirname , 'valider.html'))
 })
-
-// modification
-commanderRouter.put('/:per()sonId', validateCommandeData, findProduitAndPutInRequest, interruptIfNotFound, (req, res) => {
-    produits[req.personIndex] = Object.assign(req.person, req.personData)
-    res.status(200).json(produits[req.personIndex])
-})
-
-// modification différencielle (modifie seulement les champs voulus, n'écrase pas tous les champs)
-commanderRouter.patch('/:personId', findProduitAndPutInRequest, interruptIfNotFound, (req, res) => {
-    Object.assign(produits[req.personIndex], req.personData);
-    res.status(200).json(person)
-})
-
-// suppression
-commanderRouter.delete('/:personId', findProduitAndPutInRequest, interruptIfNotFound, (req, res) => {
-    produits.splice(req.personIndex, 1)
-    res.status(204).end()
-})
-
 
 // export
 module.exports = commanderRouter
