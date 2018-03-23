@@ -2,6 +2,8 @@ const express = require('express')
 const commanderRouter = express.Router()
 const bodyParser = require('body-parser')
 const path = require('path')
+// const updateProd = require('../tools/updateProd')
+// const updatePrixProd = require('../tools/updatePrixProd')
 const toolsProd = require('../tools/toolsProduits')
 
 var produits = toolsProd.GetProduits()
@@ -43,7 +45,7 @@ function validateCommandeData(req, res, next) {
 }
 
 // lectures
-commanderRouter.get('/', (req, res) => res.render('commander.ejs'))
+commanderRouter.get('/', (req, res) => res.render('commander.ejs', {updateProd: updateProd, updatePrixProd: updatePrixProd}))
 commanderRouter.get('../', (req,res) => res.redirect('localhost:3000/'))
 
 // création
