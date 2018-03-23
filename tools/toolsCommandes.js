@@ -1,11 +1,6 @@
-var { produits } = require('../data/produitsData')
 const fs = require('fs')
 const path = require('path')
 var commandes = {}
-
- function GetProduits(){
-    return produits
- }
 
 function GetCommandes(){
      // lit le fichier JSON et le parse pour obtenir un objet de commandes
@@ -25,5 +20,5 @@ function AddCommande(pCommande){
 }
 
 module.exports = {
-    GetProduits, GetCommandes, AddCommande
+    GetCommandes, AddCommande
 }

@@ -7,7 +7,7 @@ validerRouter.use(bodyParser.urlencoded({extended: true}))
 validerRouter.use(bodyParser.json())
 
 // lectures
-validerRouter.post('/', (req, res) => res.sendFile(path.join(__dirname , 'valider.html')))
+validerRouter.post('/', (req, res) => res.render('valider.ejs'))
     // retour à l'accueil
 validerRouter.get('../', (req,res) => res.redirect('localhost:3000/'))
 

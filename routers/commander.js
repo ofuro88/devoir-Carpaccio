@@ -2,10 +2,9 @@ const express = require('express')
 const commanderRouter = express.Router()
 const bodyParser = require('body-parser')
 const path = require('path')
-const tools = require('../tools/toolsCommandes')
+const toolsProd = require('../tools/toolsProduits')
 
-var produits = tools.GetProduits()
-var commandes = tools.GetCommandes()
+var produits = toolsProd.GetProduits()
 
 commanderRouter.use(bodyParser.urlencoded({extended: true}))
 commanderRouter.use(bodyParser.json())
@@ -44,14 +43,15 @@ function validateCommandeData(req, res, next) {
 }
 
 // lectures
-commanderRouter.get('/', (req, res) => res.sendFile(path.join(__dirname , 'commander.html')))
+commanderRouter.get('/', (req, res) => res.render('commander.ejs'))
 commanderRouter.get('../', (req,res) => res.redirect('localhost:3000/'))
 
 // création
 commanderRouter.post('/', validateCommandeData, (req, res) => {
     tools.AddCommande(req.commandeData)
-    res.sendFile(path.join(__dirname , 'valider.html'))
+    res.sendFile(path.join(__dirname , 'valider.ejs'))
 })
+
 
 // export
 module.exports = commanderRouter
