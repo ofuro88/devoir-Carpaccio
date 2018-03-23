@@ -1,0 +1,22 @@
+[
+  {"nom" : "Céleri","Saison" : "Hiver", "Prix" : 5.77},
+  {"nom" : "Oignon","Saison" : "Hiver", "Prix" : 3.32},
+  {"nom" : "Pomme de terre","Saison" : "Hiver", "Prix" : 3.20},
+  {"nom" : "Orange","Saison" : "Hiver", "Prix" : 3.17},
+  {"nom" : "Kiwi","Saison" : "Printemps", "Prix" : 2.13},
+  {"nom" : "Carotte","Saison" : "Printemps", "Prix" : 2.12},
+  {"nom" : "Asperge","Saison" : "Printemps", "Prix" : 12.55},
+  {"nom" : "Fraise","Saison" : "Printemps", "Prix" : 9.92},
+  {"nom" : "Rhubarbe","Saison" : "Printemps", "Prix" : 3.59},
+  {"nom" : "Betterave","Saison" : "Printemps", "Prix" : 4.70},
+  {"nom" : "Concombre","Saison" : "Ete", "Prix" : 3.18},
+  {"nom" : "Courgette","Saison" : "Ete", "Prix" : 9.29},
+  {"nom" : "Tomate","Saison" : "Ete", "Prix" : 4.54},
+  {"nom" : "Pasteque","Saison" : "Ete", "Prix" : 3.42},
+  {"nom" : "Cerise","Saison" : "Ete", "Prix" : 5.50},
+  {"nom" : "Potiron","Saison" : "Automne", "Prix" : 4.60},
+  {"nom" : "Topinambour","Saison" : "Automne", "Prix" : 3.94},
+  {"nom" : "Poireau","Saison" : "Automne", "Prix" : 4.86},
+  {"nom" : "Figue","Saison" : "Automne", "Prix" : 13.88},
+  {"nom" : "Pomme","Saison" : "Automne", "Prix" : 2.48}
+]

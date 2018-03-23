@@ -1,0 +1,44 @@
+<head>
+    <title>Commandes</title>
+</head>
+<body>
+    <h2>Commandes Effectuées</h2>
+
+    <table id="commandes" border="1">
+        <tr>
+            <td>Date</td>
+            <td>Client</td>
+            <td>Saison</td>
+            <td>Produit</td>
+            <td>Quantite</td>
+            <td>Prix Unitaire</td>
+            <td>Prix</td>
+            <td>Reduction</td>
+        </tr>
+        <%
+            console.log(commandes)
+        for(var i = 1 ; i <= commandes.length ; i++) {
+        %>
+        <tr>
+            <td>Date</td>
+            <td datatype="text"><%commandes.length %></td>
+            <td>Saison</td>
+            <td>Produit</td>
+            <td>Quantite</td>
+            <td>Prix Unitaire</td>
+            <td>Prix</td>
+            <td>Reduction</td>
+        </tr>
+        <%
+        }
+        %>
+    </table>
+
+    <br>
+    <br>
+
+    <form name="accueil" action="../" method="get">
+        <button type="submit">Accueil</button>
+    </form>
+</body>
+</html>

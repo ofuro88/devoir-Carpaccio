@@ -1,0 +1,59 @@
+<!doctype html>
+<meta charset="utf-8">
+<body>
+    <form name="form" action="./commander" method="post">
+
+        <b><label for="date">Date :</label></b>
+        <input type="date" name="date" id="date" value="2018-03-13" min="2018-01-01" max="2018-03-31" required>
+        <br>
+        <br>
+
+        <b><label for="client">Nom :</label></b>
+        <input type="text" name="client" id="client" value="Jean" required>
+        <br>
+        <br>
+
+        <b><label for="saison">Saison :</label></b>
+        <select name="saison" id="saison" onchange="updateProd()" required>
+            <option value=""></option>
+            <option value="Hiver">Hiver</option>
+            <option value="Printemps">Printemps</option>
+            <option value="Ete">Eté</option>
+            <option value="Automne">Automne</option>
+        </select>
+        <br>
+        <br>
+
+        <b><label for="produit">Produit :</label></b>
+        <select name="produit" id="produit"  onchange="updatePrixProd()" required></select>
+        <br>
+        <br>
+
+        <b><label for="quantite">Quantité :</label></b>
+        <input type="number" name="quantite" id="quantite" onchange="updatePrixProd()" value=1 min=0 required>
+        <br>
+        <br>
+
+        <b><label for="prixUnitaire">Prix unitaire : </label></b>
+        <input type="number" id="prixUnitaire" name="prixUnitaire" readonly> €
+        <br>
+        <br>
+
+        <b><label for="prix">Prix total : </label></b>
+        <input type="number" id = "prix" name = "prix" readonly> €
+        <br>
+        <br>
+
+        <b><label for="reduction">Comprenant une réduction de : </label></b>
+        <input type="number" id = "reduction" name = "reduction" readonly> €
+        <br>
+        <br>
+
+        <button type="submit">Commander</button>
+    </form>
+
+    <form name="accueil" action="../" method="get">
+        <button type="submit">Accueil</button>
+    </form>
+
+</body>
