@@ -49,9 +49,7 @@ commanderRouter.get('../', (req,res) => res.redirect('localhost:3000/'))
 
 // création
 commanderRouter.post('/', validateCommandeData, (req, res) => {
-    const commande = Object.assign({ id: tools.GetNextCommandeId() }, req.commandeData)
-    tools.AddCommande(commande)
-    console.log(commandes)
+    tools.AddCommande(req.commandeData)
     res.sendFile(path.join(__dirname , 'valider.html'))
 })
 

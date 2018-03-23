@@ -2,6 +2,12 @@
 <meta charset="utf-8">
 <body>
     <form name="form" action="./commander" method="post">
+
+        <b><label for="date">Date :</label></b>
+        <input type="date" name="date" id="date" value="2018-03-13" min="2018-01-01" max="2018-03-31" required>
+        <br>
+        <br>
+
         <b><label for="client">Nom :</label></b>
         <input type="text" name="client" id="client" value="Jean" required>
         <br>
@@ -25,11 +31,6 @@
 
         <b><label for="quantite">Quantité :</label></b>
         <input type="number" name="quantite" id="quantite" onchange="updatePrixProd()" value=1 min=0 required>
-        <br>
-        <br>
-
-        <b><label for="date">Date :</label></b>
-        <input type="date" name="date" id="date" value="2018-03-13" min="2018-01-01" max="2018-03-31" required>
         <br>
         <br>
 
@@ -58,7 +59,6 @@
 </body>
 
 <script type="text/javascript">
-
     // ------------ fonction d'affichage de prix -------------------
     function updatePrixProd(){
         // variables utilisées
